@@ -2,34 +2,35 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Chato",
-  description: "Chato 配置文档",
+  title: "CV工程师",
+  description: "技术博客",
   srcDir: './src',
   // 还需要再服务器上配置路由匹配重定向
   cleanUrls: true, 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '首页', link: '/' },
+      { text: '文章', link: '/package/docker/docker-docs' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'Docker',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '1.基本概念', link: '/package/docker/docker-docs' },
+          { text: '2.基本应用', link: '/package/docker/docker-application' },
+          // { text: '3.镜像优化', link: '/package/docker/docker-image' },
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/lik778' }
     ]
   },
   rewrites: {
-    "package/:pkg/(.*)": ":pkg/index.md",
+    "package/:pkg/(.*)": ":pkg/(.*)",
   },
   base: "/docs/"
 })
