@@ -30,5 +30,6 @@ export default defineConfig({
   },
   rewrites: {
     "package/:pkg/(.*)": ":pkg/index.md",
-  }
+  },
+  base: "/docs/"
 })
