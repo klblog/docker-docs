@@ -11,16 +11,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '文章', link: '/package/docker/docker-docs' }
+      { text: '文章', link: '/docker/docker-docs' }
     ],
 
     sidebar: [
       {
         text: 'Docker',
         items: [
-          { text: '1.基本概念', link: '/package/docker/docker-docs' },
-          { text: '2.基本应用', link: '/package/docker/docker-application' },
-          // { text: '3.镜像优化', link: '/package/docker/docker-image' },
+          { text: '1.基本概念', link: '/docker/docker-docs' },
+          { text: '2.基本应用', link: '/docker/docker-application' },
+          // { text: '3.镜像优化', link: '/docker/docker-image' },
         ]
       }
     ],

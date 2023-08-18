@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: 所有文章
-      link: /package/docker/docker-docs
+      link: /docker/docker-docs
     - theme: alt
       text: demo
-      link: /package/docker/docker-application
+      link: /docker/docker-application
 
 features:
   - title: Docker学习
