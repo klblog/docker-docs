@@ -53,7 +53,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository 默认部署根目录，如果要部署非根目录，比如docs。可以把 . 改成 ./docs 。同时在docs下面新增index.html 
-          path: './dist'
+          path: './.vitepress/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
