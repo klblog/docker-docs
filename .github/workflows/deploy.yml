@@ -30,23 +30,28 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
+      - name: pnpm action
+        uses: pnpm/action-setup@v2
+        with: 
+          version: 8
+      # - name: Setup Pages
+      #   uses: actions/configure-pages@v4
       - name: SetupNode
         uses: actions/setup-node@v4
         with:  # 设置node版本，并设置npm缓存
-          node-version: 18
-      - name: Install pnpm
-        run: npm install -g pnpm --unsafe-perm=true
+          node-version: 18,
+          cache: 'pnpm'
+      # - name: Install pnpm
+      #   run: npm install -g pnpm --unsafe-perm=true
       - name: InstallDependencies # 安装依赖
         run: pnpm install
-      - name: Cache .pnpm-store
-        uses: actions/cache@v3
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-
+      # - name: Cache .pnpm-store
+      #   uses: actions/cache@v3
+      #   with:
+      #     path: ~/.pnpm-store
+      #     key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pnpm-
       - name: Build # 构建
         run: pnpm run docs:build
       - name: Upload artifact
