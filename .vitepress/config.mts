@@ -32,5 +32,5 @@ export default defineConfig({
   rewrites: {
     "package/:pkg/(.*)": ":pkg/(.*)",
   },
-  base: "./"
+  base: "/docs/"
 })
